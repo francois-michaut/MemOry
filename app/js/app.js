@@ -4,7 +4,7 @@ const app = {
 
     init: function() {
 
-        console.log('Hello bébé');
+        card.init();
 
     }
 }
