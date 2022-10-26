@@ -1,23 +1,15 @@
 const card = {
 
    init: function()  {
-/* 
-   let Cardtry = document.createElement('h2');
 
-   Cardtry.textContent = 'Hello bébé';
-
-   let container = document.querySelector('.container__card');
-
-   console.log('card chargée');
-   
-   container.prepend(Cardtry);
- */
 // Je crée ma div de classe card
   const cardElement = document.createElement('div');
 
   cardElement.classList.add('card');
 // Je crée ma div de classe card__inner
   const cardInnerElement = document.createElement('div');
+//Je crée des écouteurs d'évènement sur mes cartes
+  cardElement.addEventListener('click',card.handleCardClick);
 
   cardInnerElement.classList.add('card__inner');
 // Je crée ma div de classe card__front
@@ -43,5 +35,13 @@ const card = {
   const containerCard = document.querySelector('.container__card');
 
   containerCard.append(cardElement);
+   },
+
+   handleCardClick: function(){
+
+    const cardElement = document.querySelector('.card__inner');
+
+    cardElement.classList.add('card__inner--returned');
+
    }
 }
