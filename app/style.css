@@ -1,0 +1,69 @@
+.main__title {
+     color: blueviolet;
+     text-align:center;
+}
+.container__players {
+    display:flex;
+    justify-content: space-between;
+}
+.container__player--one {
+    margin-left: 50px;
+    text-align: center;
+    background-color: darkorange;
+    border-radius: 20px;
+    padding: 0 5px;
+
+}
+.container__player--two {
+    margin-right: 50px;
+    text-align: center;
+    background-color: deepskyblue;
+    border-radius: 20px;
+    padding: 0 5px;
+}
+.image__player--one, .image__player--two {
+    width: 120px;
+}
+.container__card {
+    display:flex;
+    flex-wrap:wrap;
+    margin:  20px auto;
+}
+.card {
+    width:95px;
+    height:120px;
+    margin: 5px;
+    perspective: 1000px;
+}
+.card__inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.2s;
+    transform-style: preserve-3d;
+}
+.card__inner--returned {
+    transform: rotateY(180deg);
+}
+
+.card__front, .card__back {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;    
+}
+.card__front {
+    background-color: red;
+}
+.card__front:before {
+    content: '';
+    position: absolute;
+}
+
+.card__back {
+    transform: rotateY(180deg);
+    border: 1px solid black;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
