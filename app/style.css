@@ -63,5 +63,7 @@
 
 .card__back {
     transform: rotateY(180deg);
-    background-color: green;
+    border: 1px solid black;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
