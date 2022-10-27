@@ -4,7 +4,8 @@ const app = {
 
     init: function() {
 
-        card.init();
+
+        gamePlan.init();
 
     }
 }

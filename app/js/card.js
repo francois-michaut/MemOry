@@ -37,11 +37,17 @@ const card = {
   containerCard.append(cardElement);
    },
 
-   handleCardClick: function(){
+   handleCardClick: function(event){
+    
+    const cardElement = event.target;
+    
+    cardElement.parentNode.classList.add('card__inner--returned');
 
-    const cardElement = document.querySelector('.card__inner');
+   
 
-    cardElement.classList.add('card__inner--returned');
+    
+ // A voir le retournement des cartes selon sa position initiale
+   },
 
-   }
+   
 }
