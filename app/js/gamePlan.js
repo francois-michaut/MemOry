@@ -71,9 +71,12 @@ randomizeCard: function(array){
     let i = array.length;
 // Ont commence notre itération à la fin du tableau
     while (--i > 0) {
-
+// Math.floor renvoie à l'entier le plus proche (vers le bas)
+// Math.random renvoie un nombre flottant compris entre 0 et 1
         let randIndex = Math.floor(Math.random() * (i+1));
+// pour l'exemple, on se retrouve avec un index = à 17        
         [array[randIndex],array[i]] = [array[i], array[randIndex]];
+       
     }
     return array;
 }
