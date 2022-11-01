@@ -4,7 +4,6 @@ const app = {
 
     init: function() {
 
-
         gamePlan.init();
 
     }

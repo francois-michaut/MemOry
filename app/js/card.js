@@ -38,15 +38,19 @@ const card = {
    },
 
    handleCardClick: function(event){
-    
+
+    // On récupère la carte ciblée au click (on récupère card__front)
     const cardElement = event.target;
-    
-    cardElement.parentNode.classList.add('card__inner--returned');
 
+    // De là, on récupère le parent de card__front == card__inner
+    const divCard = cardElement.parentNode;
+    // On ajoute la classe --returned qui permet à la carte ciblée d'être retournée
+    divCard.classList.add('card__inner--returned');
+    
+    const cards = document.querySelectorAll('.card__inner--returned :nth-child(2)');
    
-
+    console.log(cards);
     
- // A voir le retournement des cartes selon sa position initiale
    },
 
    
