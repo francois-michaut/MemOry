@@ -49,7 +49,7 @@ const card = {
     
     const cards = document.querySelectorAll('.card__inner--returned :nth-child(2)');
    
-    console.log(cards);
+    gamePlan.checkCards(cards);
     
    },
 

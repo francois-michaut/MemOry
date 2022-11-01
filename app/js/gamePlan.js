@@ -65,6 +65,7 @@ init: function() {
     }
 
 },
+
 //https://www.astucesmobiles.com/comment-melanger-un-tableau-en-javascript/
 randomizeCard: function(array){
 // renvoie la longeur du tableau , soit 32 images
@@ -79,6 +80,20 @@ randomizeCard: function(array){
        
     }
     return array;
-}
+},
+
+checkCards : function(cards){
+
+const cardOneId = cards[0]['id'];
+
+const cardTwoId = cards[1]['id'];
+
+const newId1 = cardOneId.slice(0, -2);
+
+const newId2 = cardTwoId.slice(0, -2);
+
+console.log(newId1);
+console.log(newId2);
+},
 
 }
