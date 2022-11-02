@@ -60,8 +60,9 @@ const card = {
     // https://stackoverflow.com/questions/7137401/why-is-the-method-executed-immediately-when-i-use-settimeout
     //
 
-
     setTimeout(gamePlan.checkCards,4000,cards);
+
+
     }
 
    },

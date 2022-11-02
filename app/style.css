@@ -54,7 +54,8 @@
     backface-visibility: hidden;    
 }
 .card__front {
-    background-color: red;
+    background-image: url(../assets/images/MemOryCover.png);
+    background-repeat: round;
 }
 .card__front:before {
     content: '';
@@ -69,7 +70,7 @@
     background-position: center;
 }
 .playerMessage {
-    text-align: center;
+   text-align: center;
    width: 40%;
    margin: 0 auto;
    position: relative;
