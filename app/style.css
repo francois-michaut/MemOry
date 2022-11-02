@@ -68,3 +68,10 @@
     background-size: contain;
     background-position: center;
 }
+.playerMessage {
+    text-align: center;
+   width: 40%;
+   margin: 0 auto;
+   position: relative;
+   top: 50px;
+}

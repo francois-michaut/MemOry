@@ -49,8 +49,16 @@ const card = {
     
     const cards = document.querySelectorAll('.card__inner--returned :nth-child(2)');
    
-    gamePlan.checkCards(cards);
+    if (cards.length === 2) {
+
+    setTimeout(() => {gamePlan.checkCards(cards);}, 1000);
+/*     setTimeout(gamePlan.checkCards(cards),1000); */
     
+  
+    
+    }
+
+  
    },
 
    

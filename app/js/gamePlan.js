@@ -92,6 +92,35 @@ const newId1 = cardOneId.slice(0, -2);
 
 const newId2 = cardTwoId.slice(0, -2);
 
+if (newId1 === newId2 ) {
+
+
+    const playerMessage = document.createElement('h2');
+
+    playerMessage.innerHTML = 'Bien joué !';
+
+    playerMessage.classList.add('playerMessage');
+
+    const headerElement = document.querySelector('.header');
+
+    headerElement.append(playerMessage);
+
+
+
+} else {
+
+    const playerMessage = document.createElement('h2');
+
+    playerMessage.innerHTML = 'Perdu!';
+    
+    playerMessage.classList.add('playerMessage');
+    
+    const headerElement = document.querySelector('.header');
+
+    headerElement.append(playerMessage);
+
+};
+
 console.log(newId1);
 console.log(newId2);
 },
