@@ -1,6 +1,18 @@
 const gamePlan = {
 
+currentPlayer: 'Joueur 1',
+
 init: function() {
+
+    const playerMessage = document.createElement('h2');
+
+    playerMessage.innerHTML = 'Joueur 1, c\'est à vous !';
+    
+    playerMessage.classList.add('playerMessage');
+    
+    const headerElement = document.querySelector('.header');
+
+    headerElement.append(playerMessage);
 
     const imagesArray= [
         'airplane-1',
@@ -94,30 +106,46 @@ const newId2 = cardTwoId.slice(0, -2);
 
 if (newId1 === newId2 ) {
 
-
-    const playerMessage = document.createElement('h2');
+    const playerMessage = document.querySelector('.playerMessage');
 
     playerMessage.innerHTML = 'Bien joué !';
 
-    playerMessage.classList.add('playerMessage');
+    setTimeout(() => {playerMessage.innerHTML =  ` ${this.currentPlayer} c\'est à vous !`},1000);
 
-    const headerElement = document.querySelector('.header');
+    const cardsReturned = document.querySelectorAll('.card__inner--returned');
 
-    headerElement.append(playerMessage);
+    for (let card of cardsReturned) {
 
+        setTimeout(() => {card.style.display='none';}, 1000);
 
+    };
+    
 
 } else {
 
-    const playerMessage = document.createElement('h2');
+   const playerMessage = document.querySelector('.playerMessage');
 
-    playerMessage.innerHTML = 'Perdu!';
-    
-    playerMessage.classList.add('playerMessage');
-    
-    const headerElement = document.querySelector('.header');
+    playerMessage.innerHTML = 'Perdu! ';
 
-    headerElement.append(playerMessage);
+    // Une ternaire ?
+    
+    if( this.currentPlayer === 'Joueur 2') {
+        this.currentPlayer = 'Joueur 1';
+    } else {
+        this.currentPlayer = 'Joueur 2';
+    }
+
+    setTimeout(() => {playerMessage.innerHTML =  ` ${this.currentPlayer} c\'est à vous !`},1000);
+    console.log(cards);
+
+    const cardsReturned = document.querySelectorAll('.card__inner--returned');
+
+    for (let card of cardsReturned) {
+
+        setTimeout(() => {card.classList.remove('card__inner--returned')}, 1000);
+
+    };
+    
 
 };
 

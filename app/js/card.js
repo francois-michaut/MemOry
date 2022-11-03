@@ -50,20 +50,19 @@ const card = {
     const cards = document.querySelectorAll('.card__inner--returned :nth-child(2)');
    
     if (cards.length === 2) {
-    // Erreur setTimeout(gamePlan.checkCards(cards),4000); car "() acts as an invocation operator here"
 
-    // Solution 1
-    //
-    //    setTimeout(() => {gamePlan.checkCards(cards);}, 1000);
-    // ou
-    //
-    // https://stackoverflow.com/questions/7137401/why-is-the-method-executed-immediately-when-i-use-settimeout
-    //
-
-    setTimeout(gamePlan.checkCards,4000,cards);
-
+      setTimeout(gamePlan.checkCards,2000,cards);
 
     }
+    // Erreur setTimeout(gamePlan.checkCards(cards),4000); car "() acts as an invocation operator here"
+
+    //                         Solution 1
+  
+    //    setTimeout(() => {gamePlan.checkCards(cards);}, 1000);
+
+    //                            ou
+   
+    // https://stackoverflow.com/questions/7137401/why-is-the-method-executed-immediately-when-i-use-settimeout
 
    },
 
