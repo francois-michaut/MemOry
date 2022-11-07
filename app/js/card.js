@@ -40,19 +40,24 @@ const card = {
    handleCardClick: function(event){
 
     // On récupère la carte ciblée au click (on récupère card__front)
-    const cardElement = event.target;
-
+    let cardElement = event.target;
+   
     // De là, on récupère le parent de card__front == card__inner
-    const divCard = cardElement.parentNode;
+    let divCard = cardElement.parentNode;
+    
     // On ajoute la classe --returned qui permet à la carte ciblée d'être retournée
     divCard.classList.add('card__inner--returned');
     
-    const cards = document.querySelectorAll('.card__inner--returned :nth-child(2)');
-   
+    let cards = document.querySelectorAll('.card__inner--returned :nth-child(2)'); 
+     // Problème et solution 1 
+    // probleme ici on récupère l id de la div card back
+    // il faut donc retirer la classe 'card__inner--returned' qui persistait lorsque ces dernières étaient identique. (suite dans gamePlan ligne 120)
     if (cards.length === 2) {
 
-      setTimeout(gamePlan.checkCards,2000,cards);
+      setTimeout(gamePlan.checkCards,1000,cards);
+     
 
+      cards = [];  
     }
     // Erreur setTimeout(gamePlan.checkCards(cards),4000); car "() acts as an invocation operator here"
 

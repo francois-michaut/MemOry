@@ -45,6 +45,9 @@
 .card__inner--returned {
     transform: rotateY(180deg);
 }
+.card__inner--returned--find{
+    display: none;
+}
 
 .card__front, .card__back {
     position: absolute;

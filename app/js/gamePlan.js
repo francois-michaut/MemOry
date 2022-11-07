@@ -2,6 +2,7 @@ const gamePlan = {
 
 currentPlayer: 'Joueur 1',
 
+
 init: function() {
 
     const playerMessage = document.createElement('h2');
@@ -96,9 +97,9 @@ randomizeCard: function(array){
 
 checkCards : function(cards){
 
-const cardOneId = cards[0]['id'];
+let cardOneId = cards[0]['id'];
 
-const cardTwoId = cards[1]['id'];
+let cardTwoId = cards[1]['id'];
 
 const newId1 = cardOneId.slice(0, -2);
 
@@ -116,8 +117,12 @@ if (newId1 === newId2 ) {
 
     for (let card of cardsReturned) {
 
-        setTimeout(() => {card.style.display='none';}, 1000);
-
+        // Problème et solution 1 (suite)
+        // Ici ont retire aux deux cartes identiques la classe 'card__inner--returned' pour évité les conflit avec le handler card.handleClick
+        // Ont leur ajoute la classe 'card__inner--returned--find' qui contient un display:none afin de les faire disparaître
+        setTimeout(() => {card.classList.remove('card__inner--returned')}, 1000);
+        setTimeout(() => {card.classList.add('card__inner--returned--find')}, 1000,);
+        
     };
     
 
@@ -127,13 +132,14 @@ if (newId1 === newId2 ) {
 
     playerMessage.innerHTML = 'Perdu! ';
 
-    // Une ternaire ?
-    
-    if( this.currentPlayer === 'Joueur 2') {
+    // Une ternaire ? A voir Renvoie Undefined mais pas dans le bloc de condition
+    // Undefined dans une ternaire
+
+     if( this.currentPlayer === 'Joueur 2') {
         this.currentPlayer = 'Joueur 1';
     } else {
         this.currentPlayer = 'Joueur 2';
-    }
+    }  
 
     setTimeout(() => {playerMessage.innerHTML =  ` ${this.currentPlayer} c\'est à vous !`},1000);
     console.log(cards);
@@ -149,8 +155,6 @@ if (newId1 === newId2 ) {
 
 };
 
-console.log(newId1);
-console.log(newId2);
 },
 
 }
