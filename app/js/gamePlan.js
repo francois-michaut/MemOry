@@ -1,9 +1,19 @@
 const gamePlan = {
 
 currentPlayer: 'Joueur 1',
+playerOneScore : 0 ,
+playerTwoScore : 0 ,
 
 
 init: function() {
+
+    const scoreOne = document.querySelector('.scoring__player--one');
+
+    const scoreTwo = document.querySelector('.scoring__player--two');
+
+    scoreOne.innerHTML = 'Score: 0';
+
+    scoreTwo.innerHTML = 'Score: 0';
 
     const playerMessage = document.createElement('h2');
 
@@ -112,6 +122,24 @@ if (newId1 === newId2 ) {
     playerMessage.innerHTML = 'Bien joué !';
 
     setTimeout(() => {playerMessage.innerHTML =  ` ${this.currentPlayer} c\'est à vous !`},1000);
+
+    if(this.currentPlayer == 'Joueur 1 ') {
+
+        gamePlan.playerOneScore ++ ;
+        
+        const scoreOne = document.querySelector('.scoring__player--one');
+
+        scoreOne.innerHTML = `Score: ${gamePlan.playerOneScore}`;
+
+    } else {
+
+        gamePlan.playerTwoScore ++ ;
+        
+        const scoreTwo = document.querySelector('.scoring__player--two');
+
+        scoreTwo.innerHTML = `Score: ${gamePlan.playerTwoScore}`;
+
+    }
 
     const cardsReturned = document.querySelectorAll('.card__inner--returned');
 
