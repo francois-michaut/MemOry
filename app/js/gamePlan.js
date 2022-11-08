@@ -135,11 +135,14 @@ if (newId1 === newId2 ) {
     // Une ternaire ? A voir Renvoie Undefined mais pas dans le bloc de condition
     // Undefined dans une ternaire
 
-     if( this.currentPlayer === 'Joueur 2') {
+    this.currentPlayer = this.currentPlayer === 'Joueur 2 ' ? 'Joueur 1 ' : 'Joueur 2 ' ; 
+    
+    // équivlalent de :
+    /* if( this.currentPlayer === 'Joueur 2') {
         this.currentPlayer = 'Joueur 1';
     } else {
         this.currentPlayer = 'Joueur 2';
-    }  
+    }   */
 
     setTimeout(() => {playerMessage.innerHTML =  ` ${this.currentPlayer} c\'est à vous !`},1000);
     console.log(cards);
@@ -154,6 +157,9 @@ if (newId1 === newId2 ) {
     
 
 };
+    const allCardElement = document.querySelectorAll('.card');
+
+    setTimeout(() => {allCardElement.forEach(cards => { cards.addEventListener('click',card.handleCardClick)})},2000);
 
 },
 

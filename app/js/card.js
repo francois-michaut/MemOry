@@ -8,6 +8,9 @@ const card = {
   cardElement.classList.add('card');
 // Je crée ma div de classe card__inner
   const cardInnerElement = document.createElement('div');
+
+
+
 //Je crée des écouteurs d'évènement sur mes cartes
   cardElement.addEventListener('click',card.handleCardClick);
 
@@ -37,7 +40,26 @@ const card = {
   containerCard.append(cardElement);
    },
 
+  count: 0 ,
+
+
    handleCardClick: function(event){
+
+  /*   console.log(card.count);
+
+    card.count += 1; 
+
+    console.log(card.count);
+
+
+    if(card.count === 2) {
+      const allCardElement = document.querySelectorAll('.card');
+
+      allCardElement.forEach(cardElement => cardElement.removeEventListener('click', card.handleCardClick));
+
+      
+  
+      } */
 
     // On récupère la carte ciblée au click (on récupère card__front)
     let cardElement = event.target;
@@ -54,10 +76,16 @@ const card = {
     // il faut donc retirer la classe 'card__inner--returned' qui persistait lorsque ces dernières étaient identique. (suite dans gamePlan ligne 120)
     if (cards.length === 2) {
 
-      setTimeout(gamePlan.checkCards,1000,cards);
-     
+      const allCardElement = document.querySelectorAll('.card');
 
-      cards = [];  
+      allCardElement.forEach(cardElement => cardElement.removeEventListener('click', card.handleCardClick));
+
+
+      setTimeout(gamePlan.checkCards,1000,cards);
+
+      // setTimeout(allCardElement.forEach(cardElement => cardElement.addEventListener('click', card.handleCardClick)), 5000);
+
+     
     }
     // Erreur setTimeout(gamePlan.checkCards(cards),4000); car "() acts as an invocation operator here"
 
