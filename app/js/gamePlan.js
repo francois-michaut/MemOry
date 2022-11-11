@@ -121,7 +121,7 @@ if (newId1 === newId2 ) {
 
     playerMessage.innerHTML = 'Bien joué !';
 
-    setTimeout(() => {playerMessage.innerHTML =  ` ${this.currentPlayer} c\'est à vous !`},1000);
+   /*  setTimeout(() => {playerMessage.innerHTML =  ` ${this.currentPlayer} c\'est à vous !`},1000); */
 
     if(this.currentPlayer == 'Joueur 1 ') {
 
@@ -141,7 +141,13 @@ if (newId1 === newId2 ) {
 
     }
 
+    gamePlan.checkScore(gamePlan.playerOneScore, gamePlan.playerTwoScore);
+
+    setTimeout(() => {playerMessage.innerHTML =  ` ${this.currentPlayer} c\'est à vous !`},1000);
+
     const cardsReturned = document.querySelectorAll('.card__inner--returned');
+
+   
 
     for (let card of cardsReturned) {
 
@@ -149,10 +155,16 @@ if (newId1 === newId2 ) {
         // Ici ont retire aux deux cartes identiques la classe 'card__inner--returned' pour évité les conflit avec le handler card.handleClick
         // Ont leur ajoute la classe 'card__inner--returned--find' qui contient un display:none afin de les faire disparaître
         setTimeout(() => {card.classList.remove('card__inner--returned')}, 1000);
-        setTimeout(() => {card.classList.add('card__inner--returned--find')}, 1000,);
-        
-    };
+        setTimeout(() => {card.classList.add('card__inner--returned--find')}, 1000);
+        setTimeout(() => {card.parentElement.removeEventListener('click',() => card.handleCardClick())},1000);
+      /*   const test = card.parentNode;
+        console.log(test);
+        test.removeEventListener('click', () => card.handleCardClick()); */
+      /*   card.parentNode.removeEventListener('click', () => card.handleCardClick()); */
     
+    };
+
+
 
 } else {
 
@@ -180,7 +192,6 @@ if (newId1 === newId2 ) {
     for (let card of cardsReturned) {
 
         setTimeout(() => {card.classList.remove('card__inner--returned')}, 1000);
-
     };
     
 
@@ -190,5 +201,36 @@ if (newId1 === newId2 ) {
     setTimeout(() => {allCardElement.forEach(cards => { cards.addEventListener('click',card.handleCardClick)})},2000);
 
 },
+
+checkScore: function(score1, score2){
+    if( score1 + score2 === 16 ) {
+        if(score1 < score2 ) {
+            const playerMessage = document.querySelector('.playerMessage');
+
+            playerMessage.innerHTML = "Bravo, joueur2 vous avez gagné !!!";
+        } else if(score1 > score2) {
+            const playerMessage = document.querySelector('.playerMessage');
+
+            playerMessage.innerHTML = "Bravo, joueur 2 vous avez gagné !!!";
+        } else {
+            const playerMessage = document.querySelector('.playerMessage');
+
+            playerMessage.innerHTML = "Egalité, vous pouvez rejouer !!!";
+        }
+
+        const buttonElement = document.createElement('button');
+
+        buttonElement.classList.add('refresh__button');
+
+        buttonElement.innerHTML = 'Relancer une partie';
+
+        const containerCard = document.querySelector('.container__card');
+
+        containerCard.append(buttonElement);
+
+        buttonElement.addEventListener('click',() => window.location.reload());
+
+    }
+}
 
 }

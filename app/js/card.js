@@ -9,8 +9,6 @@ const card = {
 // Je crée ma div de classe card__inner
   const cardInnerElement = document.createElement('div');
 
-
-
 //Je crée des écouteurs d'évènement sur mes cartes
   cardElement.addEventListener('click',card.handleCardClick);
 
@@ -44,6 +42,8 @@ const card = {
 
 
    handleCardClick: function(event){
+
+    console.log('cliqué!!!');
 
   /*   console.log(card.count);
 
@@ -83,7 +83,6 @@ const card = {
 
       setTimeout(gamePlan.checkCards,1000,cards);
 
-      // setTimeout(allCardElement.forEach(cardElement => cardElement.addEventListener('click', card.handleCardClick)), 5000);
 
      
     }
