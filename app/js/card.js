@@ -69,6 +69,11 @@ const card = {
     
     // On ajoute la classe --returned qui permet à la carte ciblée d'être retournée
     divCard.classList.add('card__inner--returned');
+
+    // On retire l'écouteur d'évènement sur la   carte courante pour éviter de cliquer plusieurs fois dessus ce qui amenait un bug
+    let cardReturned = divCard.parentNode;
+
+     cardReturned.removeEventListener('click', card.handleCardClick);
     
     let cards = document.querySelectorAll('.card__inner--returned :nth-child(2)'); 
      // Problème et solution 1 

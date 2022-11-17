@@ -141,39 +141,27 @@ if (newId1 === newId2 ) {
 
     }
 
-    gamePlan.checkScore(gamePlan.playerOneScore, gamePlan.playerTwoScore);
+    /* setTimeout(() => {playerMessage.innerHTML =  ` ${this.currentPlayer} c\'est à vous !`},1000); */
 
-    setTimeout(() => {playerMessage.innerHTML =  ` ${this.currentPlayer} c\'est à vous !`},1000);
+    gamePlan.checkScore(gamePlan.playerOneScore, gamePlan.playerTwoScore,this.currentPlayer);
 
     const cardsReturned = document.querySelectorAll('.card__inner--returned');
 
-   
+    cardsReturned.forEach(card => {
 
-    for (let card of cardsReturned) {
+    setTimeout(() => {card.classList.remove('card__inner--returned')}, 1000);
+    setTimeout(() => {card.classList.add('card__inner--returned--find')}, 1000);
+    card.parentNode.classList.remove('card');
+    card.parentNode.classList.add('card--found');
+  
 
-        // Problème et solution 1 (suite)
-        // Ici ont retire aux deux cartes identiques la classe 'card__inner--returned' pour évité les conflit avec le handler card.handleClick
-        // Ont leur ajoute la classe 'card__inner--returned--find' qui contient un display:none afin de les faire disparaître
-        setTimeout(() => {card.classList.remove('card__inner--returned')}, 1000);
-        setTimeout(() => {card.classList.add('card__inner--returned--find')}, 1000);
-        setTimeout(() => {card.parentElement.removeEventListener('click',() => card.handleCardClick())},1000);
-      /*   const test = card.parentNode;
-        console.log(test);
-        test.removeEventListener('click', () => card.handleCardClick()); */
-      /*   card.parentNode.removeEventListener('click', () => card.handleCardClick()); */
-    
-    };
-
-
+   });
 
 } else {
 
    const playerMessage = document.querySelector('.playerMessage');
 
     playerMessage.innerHTML = 'Perdu! ';
-
-    // Une ternaire ? A voir Renvoie Undefined mais pas dans le bloc de condition
-    // Undefined dans une ternaire
 
     this.currentPlayer = this.currentPlayer === 'Joueur 2 ' ? 'Joueur 1 ' : 'Joueur 2 ' ; 
     
@@ -196,22 +184,28 @@ if (newId1 === newId2 ) {
     
 
 };
+    // On retire les écouteurs d'évènements des cartes ayant la classe card--found
+    const cardsFound = document.querySelectorAll('.card--found');
+  
+    setTimeout(() => {cardsFound.forEach(cards => { cards.removeEventListener('click',card.handleCardClick)})},2000);
+
+    //On remet les écouteurs d'évènements sur les cartes non trouvées
     const allCardElement = document.querySelectorAll('.card');
-
+    
     setTimeout(() => {allCardElement.forEach(cards => { cards.addEventListener('click',card.handleCardClick)})},2000);
-
+    
 },
 
-checkScore: function(score1, score2){
+checkScore: function(score1, score2,currentPlayer){
     if( score1 + score2 === 16 ) {
         if(score1 < score2 ) {
             const playerMessage = document.querySelector('.playerMessage');
 
-            playerMessage.innerHTML = "Bravo, joueur2 vous avez gagné !!!";
+            playerMessage.innerHTML = "Bravo, joueur 2 vous avez gagné !!!";
         } else if(score1 > score2) {
             const playerMessage = document.querySelector('.playerMessage');
 
-            playerMessage.innerHTML = "Bravo, joueur 2 vous avez gagné !!!";
+            playerMessage.innerHTML = "Bravo, joueur 1 vous avez gagné !!!";
         } else {
             const playerMessage = document.querySelector('.playerMessage');
 
@@ -230,6 +224,11 @@ checkScore: function(score1, score2){
 
         buttonElement.addEventListener('click',() => window.location.reload());
 
+    } else {
+
+        const playerMessage = document.querySelector('.playerMessage');
+
+        setTimeout(() => {playerMessage.innerHTML =  ` ${currentPlayer} c\'est à vous !`},1000);
     }
 }
 
