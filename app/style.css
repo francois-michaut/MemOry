@@ -1,13 +1,16 @@
 .main__title {
-     color: blueviolet;
-     text-align:center;
+    position: absolute;
+    width: 400px;
+    left: 300px;
+    bottom: 480px;
 }
 .container__players {
     display:flex;
     justify-content: space-between;
+    
 }
 .container__player--one {
-    margin-left: 50px;
+    margin-left: 15px;
     text-align: center;
     background-color: darkorange;
     border-radius: 20px;
@@ -15,7 +18,7 @@
 
 }
 .container__player--two {
-    margin-right: 50px;
+    margin-right: 15px;
     text-align: center;
     background-color: deepskyblue;
     border-radius: 20px;
@@ -28,11 +31,12 @@
     display:flex;
     flex-wrap:wrap;
     margin:  20px auto;
+    justify-content: center;
 }
 .card, .card--found {
     width:105px;
-    height:120px;
-    margin: 10px;
+    height:110px;
+    margin: 8px;
     perspective: 1000px;
     -webkit-transition: all 1s ease; /* Safari et Chrome */
     -moz-transition: all 1s ease; /* Firefox */
@@ -42,11 +46,11 @@
 }
 
 .card:hover {
-    -webkit-transform:scale(1.25); /* Safari et Chrome */
-    -moz-transform:scale(1.25); /* Firefox */
-    -ms-transform:scale(1.25); /* Internet Explorer 9 */
-    -o-transform:scale(1.25); /* Opera */
-    transform:scale(1.25);
+    -webkit-transform:scale(1.20); /* Safari et Chrome */
+    -moz-transform:scale(1.20); /* Firefox */
+    -ms-transform:scale(1.20); /* Internet Explorer 9 */
+    -o-transform:scale(1.20); /* Opera */
+    transform:scale(1.20);
    
 }
 
@@ -92,12 +96,13 @@
    width: 40%;
    margin: 0 auto;
    position: relative;
-   top: 50px;
+   top: 200px;
 }
 .refresh__button{
     
     position: absolute;
-    left: 379px;
+    left: 350px;
+    top: 430px;
     padding: 20px;
     border-radius: 18px;
     background-color: green;
@@ -113,15 +118,16 @@
 .refresh__button:hover{
     
     position: absolute;
-    left: 379px;
+    left: 350px;
+    top: 430px;
     padding: 20px;
     border-radius: 18px;
     background-color: rgb(57, 183, 57);
     color: white;
     font-size: 32px;
-    -webkit-transform:scale(1.25); /* Safari et Chrome */
-    -moz-transform:scale(1.25); /* Firefox */
-    -ms-transform:scale(1.25); /* Internet Explorer 9 */
-    -o-transform:scale(1.25); /* Opera */
-    transform:scale(1.25);
+    -webkit-transform:scale(1.10); /* Safari et Chrome */
+    -moz-transform:scale(1.10); /* Firefox */
+    -ms-transform:scale(1.10); /* Internet Explorer 9 */
+    -o-transform:scale(1.10); /* Opera */
+    transform:scale(1.10);
 }

@@ -220,9 +220,9 @@ checkScore: function(score1, score2,currentPlayer){
 
         const containerCard = document.querySelector('.container__card');
 
-        containerCard.append(buttonElement);
+        setInterval(() =>containerCard.append(buttonElement) , 1500);
 
-        buttonElement.addEventListener('click',() => window.location.reload());
+        setInterval(()=> buttonElement.addEventListener('click',() => window.location.reload()),1500);
 
     } else {
 
