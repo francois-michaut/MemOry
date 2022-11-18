@@ -7,6 +7,10 @@ playerTwoScore : 0 ,
 
 init: function() {
 
+    const currentPlayerElement = document.querySelector('.container__player--one');
+
+    currentPlayerElement.classList.add('current__player');
+
     const scoreOne = document.querySelector('.scoring__player--one');
 
     const scoreTwo = document.querySelector('.scoring__player--two');
@@ -107,96 +111,114 @@ randomizeCard: function(array){
 
 checkCards : function(cards){
 
-let cardOneId = cards[0]['id'];
+    const playerOneContainer = document.querySelector('.container__player--one');
 
-let cardTwoId = cards[1]['id'];
+    const playerTwoContainer = document.querySelector('.container__player--two');
 
-const newId1 = cardOneId.slice(0, -2);
+    let cardOneId = cards[0]['id'];
 
-const newId2 = cardTwoId.slice(0, -2);
+    let cardTwoId = cards[1]['id'];
 
-if (newId1 === newId2 ) {
+    const newId1 = cardOneId.slice(0, -2);
 
-    const playerMessage = document.querySelector('.playerMessage');
+    const newId2 = cardTwoId.slice(0, -2);
 
-    playerMessage.innerHTML = 'Bien joué !';
+    if (newId1 === newId2 ) {
 
-   /*  setTimeout(() => {playerMessage.innerHTML =  ` ${this.currentPlayer} c\'est à vous !`},1000); */
+        const playerMessage = document.querySelector('.playerMessage');
 
-    if(this.currentPlayer == 'Joueur 1 ') {
+        playerMessage.innerHTML = 'Bien joué !';
 
-        gamePlan.playerOneScore ++ ;
-        
-        const scoreOne = document.querySelector('.scoring__player--one');
+    /*  setTimeout(() => {playerMessage.innerHTML =  ` ${this.currentPlayer} c\'est à vous !`},1000); */
 
-        scoreOne.innerHTML = `Score: ${gamePlan.playerOneScore}`;
+        if(this.currentPlayer == 'Joueur 1 ') {
 
-    } else {
+            gamePlan.playerOneScore ++ ;
+            
+            const scoreOne = document.querySelector('.scoring__player--one');
 
-        gamePlan.playerTwoScore ++ ;
-        
-        const scoreTwo = document.querySelector('.scoring__player--two');
+            scoreOne.innerHTML = `Score: ${gamePlan.playerOneScore}`;
 
-        scoreTwo.innerHTML = `Score: ${gamePlan.playerTwoScore}`;
+        } else {
 
-    }
+            gamePlan.playerTwoScore ++ ;
+            
+            const scoreTwo = document.querySelector('.scoring__player--two');
 
-    /* setTimeout(() => {playerMessage.innerHTML =  ` ${this.currentPlayer} c\'est à vous !`},1000); */
+            scoreTwo.innerHTML = `Score: ${gamePlan.playerTwoScore}`;
 
-    gamePlan.checkScore(gamePlan.playerOneScore, gamePlan.playerTwoScore,this.currentPlayer);
+        }
 
-    const cardsReturned = document.querySelectorAll('.card__inner--returned');
+        /* setTimeout(() => {playerMessage.innerHTML =  ` ${this.currentPlayer} c\'est à vous !`},1000); */
 
-    cardsReturned.forEach(card => {
+        gamePlan.checkScore(gamePlan.playerOneScore, gamePlan.playerTwoScore,this.currentPlayer);
 
-    setTimeout(() => {card.classList.remove('card__inner--returned')}, 1000);
-    setTimeout(() => {card.classList.add('card__inner--returned--find')}, 1000);
-    card.parentNode.classList.remove('card');
-    card.parentNode.classList.add('card--found');
-  
+        const cardsReturned = document.querySelectorAll('.card__inner--returned');
 
-   });
-
-} else {
-
-   const playerMessage = document.querySelector('.playerMessage');
-
-    playerMessage.innerHTML = 'Perdu! ';
-
-    this.currentPlayer = this.currentPlayer === 'Joueur 2 ' ? 'Joueur 1 ' : 'Joueur 2 ' ; 
-    
-    // équivlalent de :
-    /* if( this.currentPlayer === 'Joueur 2') {
-        this.currentPlayer = 'Joueur 1';
-    } else {
-        this.currentPlayer = 'Joueur 2';
-    }   */
-
-    setTimeout(() => {playerMessage.innerHTML =  ` ${this.currentPlayer} c\'est à vous !`},1000);
-    console.log(cards);
-
-    const cardsReturned = document.querySelectorAll('.card__inner--returned');
-
-    for (let card of cardsReturned) {
+        cardsReturned.forEach(card => {
 
         setTimeout(() => {card.classList.remove('card__inner--returned')}, 1000);
+        setTimeout(() => {card.classList.add('card__inner--returned--find')}, 1000);
+        card.parentNode.classList.remove('card');
+        card.parentNode.classList.add('card--found');
+    
+
+    });
+
+    } else {
+
+        const playerMessage = document.querySelector('.playerMessage');
+
+        playerMessage.innerHTML = 'Perdu! ';
+
+        this.currentPlayer = this.currentPlayer === 'Joueur 2 ' ? 'Joueur 1 ' : 'Joueur 2 ' ; 
+        
+        // équivlalent de :
+        /* if( this.currentPlayer === 'Joueur 2') {
+            this.currentPlayer = 'Joueur 1';
+        } else {
+            this.currentPlayer = 'Joueur 2';
+        }   */
+
+        if(this.currentPlayer === 'Joueur 2 '){
+
+            playerOneContainer.classList.remove('current__player');
+            
+            playerTwoContainer.classList.add('current__player');
+        } else {
+
+            playerOneContainer.classList.add('current__player');
+            
+            playerTwoContainer.classList.remove('current__player');
+        }
+
+
+        setTimeout(() => {playerMessage.innerHTML =  ` ${this.currentPlayer} c\'est à vous !`},1000);
+        console.log(cards);
+
+        const cardsReturned = document.querySelectorAll('.card__inner--returned');
+
+        for (let card of cardsReturned) {
+
+            setTimeout(() => {card.classList.remove('card__inner--returned')}, 1000);
+        };
+        
+
     };
+        // On retire les écouteurs d'évènements des cartes ayant la classe card--found
+        const cardsFound = document.querySelectorAll('.card--found');
     
+        setTimeout(() => {cardsFound.forEach(cards => { cards.removeEventListener('click',card.handleCardClick)})},2000);
 
-};
-    // On retire les écouteurs d'évènements des cartes ayant la classe card--found
-    const cardsFound = document.querySelectorAll('.card--found');
-  
-    setTimeout(() => {cardsFound.forEach(cards => { cards.removeEventListener('click',card.handleCardClick)})},2000);
-
-    //On remet les écouteurs d'évènements sur les cartes non trouvées
-    const allCardElement = document.querySelectorAll('.card');
-    
-    setTimeout(() => {allCardElement.forEach(cards => { cards.addEventListener('click',card.handleCardClick)})},2000);
-    
-},
+        //On remet les écouteurs d'évènements sur les cartes non trouvées
+        const allCardElement = document.querySelectorAll('.card');
+        
+        setTimeout(() => {allCardElement.forEach(cards => { cards.addEventListener('click',card.handleCardClick)})},2000);
+        
+    },
 
 checkScore: function(score1, score2,currentPlayer){
+
     if( score1 + score2 === 16 ) {
         if(score1 < score2 ) {
             const playerMessage = document.querySelector('.playerMessage');

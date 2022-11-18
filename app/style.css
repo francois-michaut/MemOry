@@ -15,7 +15,7 @@
     background-color: darkorange;
     border-radius: 20px;
     padding: 0 5px;
-
+  
 }
 .container__player--two {
     margin-right: 15px;
@@ -24,8 +24,42 @@
     border-radius: 20px;
     padding: 0 5px;
 }
+
+.current__player{
+
+    animation: wiggle 2s linear;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+}
+
+@keyframes wiggle {
+    0%, 7% {
+      transform: rotateZ(0);
+      
+    }
+    15% {
+      transform: rotateZ(-15deg);
+    }
+    20% {
+      transform: rotateZ(10deg);
+    }
+    25% {
+      transform: rotateZ(-10deg);
+    }
+    30% {
+      transform: rotateZ(6deg);
+    }
+    35% {
+      transform: rotateZ(-4deg);
+    }
+    40%, 100% {
+     /* box-shadow: 10px 10px 5px rgb(238, 39, 39); */
+      transform: rotateZ(0);
+    }
+  }
+
 .image__player--one, .image__player--two {
-    width: 120px;
+    width: 100px;
 }
 .container__card {
     display:flex;
@@ -53,6 +87,7 @@
     transform:scale(1.20);
    
 }
+
 
 .card__inner {
     position: relative;
