@@ -39,7 +39,7 @@ Indicateur visuel pour signaler quel joueur est en train de jouer à tout moment
 
 Nous avons intégré un bouton de "Nouvelle Partie" à la fin de chaque session. 
 
- ## Installation 
+ ## Installation: 
 
 Clonez le Répertoire : Ouvrez un terminal et utilisez la commande suivante pour cloner le répertoire de votre projet depuis GitHub (si c'est là où il est hébergé).
 
@@ -48,7 +48,7 @@ Clonez le Répertoire : Ouvrez un terminal et utilisez la commande suivante pour
  Pour exécuter le jeu, vous devez utiliser un serveur local pour servir les fichiers HTML, CSS et JavaScript.
 
 
- ## Utilisation 
+ ## Utilisation:
 
 https://github.com/francois-michaut/MemOry/assets/94860607/063af692-cfa5-4889-b872-0bea9b829952
 
