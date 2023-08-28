@@ -10,7 +10,7 @@ Min jeux de type memory en Javascript.
 - [Fonctionnalités](#fonctionnalités)
 - [Installation](#installation)
 - [Utilisation en vidéo](#utilisation)
-- [Points de terminaison](#points-de-terminaison)
+- [Collaboration](#collaboration)
 
 
  ## Aperçu 
