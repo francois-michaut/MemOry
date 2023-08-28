@@ -35,7 +35,7 @@ Pour l'importance d'une expérience de jeu correcte, nous avons intégré un sys
 
 Indicateur visuel pour signaler quel joueur est en train de jouer à tout moment ainsi qu'en cas d'échec ou de victoire.
 
-**Relancerment de partie :**
+**Relancement de partie :**
 
 Nous avons intégré un bouton de "Nouvelle Partie" à la fin de chaque session. 
 
