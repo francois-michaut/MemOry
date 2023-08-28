@@ -185,6 +185,7 @@ checkCards : function(cards){
             playerOneContainer.classList.remove('current__player');
             
             playerTwoContainer.classList.add('current__player');
+            
         } else {
 
             playerOneContainer.classList.add('current__player');

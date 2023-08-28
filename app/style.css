@@ -1,12 +1,13 @@
 .main__title {
     position: absolute;
-    width: 400px;
-    left: 300px;
-    bottom: 480px;
+    width: 287px;
+    left: 114px;
+    bottom: 601px;
 }
 .container__players {
-    display:flex;
+    display: flex;
     justify-content: space-between;
+    width: 488px;
     
 }
 .container__player--one {
@@ -62,10 +63,10 @@
     width: 100px;
 }
 .container__card {
-    display:flex;
-    flex-wrap:wrap;
-    margin:  20px auto;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    width: 487px;
 }
 .card, .card--found {
     width:105px;
@@ -127,11 +128,12 @@
     background-position: center;
 }
 .playerMessage {
-   text-align: center;
-   width: 40%;
-   margin: 0 auto;
-   position: relative;
-   top: 200px;
+    text-align: center;
+    width: 50%;
+    position: relative;
+    top: 175px;
+    position: relative;
+    left: 170px;
 }
 .refresh__button{
     
@@ -166,3 +168,9 @@
     -o-transform:scale(1.10); /* Opera */
     transform:scale(1.10);
 }
+
+@media only screen and (min-width: 1400px){
+
+
+ }
+
