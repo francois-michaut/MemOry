@@ -43,24 +43,6 @@ const card = {
 
    handleCardClick: function(event){
 
-    console.log('cliqué!!!');
-
-  /*   console.log(card.count);
-
-    card.count += 1; 
-
-    console.log(card.count);
-
-
-    if(card.count === 2) {
-      const allCardElement = document.querySelectorAll('.card');
-
-      allCardElement.forEach(cardElement => cardElement.removeEventListener('click', card.handleCardClick));
-
-      
-  
-      } */
-
     // On récupère la carte ciblée au click (on récupère card__front)
     let cardElement = event.target;
    
