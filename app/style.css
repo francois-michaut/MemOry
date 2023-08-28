@@ -1,29 +1,37 @@
-.main__title {
+body{
+    position: relative;
+}
+.header {
+    width: 100%;
+    height: 100px;
     position: absolute;
-    width: 287px;
-    left: 114px;
-    bottom: 601px;
+}
+
+.main__title {
+    width: 116px;
+    height: 110px;
+    position: relative;
+    left: 92px;
+    bottom: 28px;
 }
 .container__players {
     display: flex;
     justify-content: space-between;
-    width: 488px;
     
 }
 .container__player--one {
-    margin-left: 15px;
-    text-align: center;
-    background-color: darkorange;
+
+    /* background-color: darkorange; */
     border-radius: 20px;
-    padding: 0 5px;
-  
+    padding: 0 5px; 
+    text-align: center;
 }
 .container__player--two {
-    margin-right: 15px;
-    text-align: center;
-    background-color: deepskyblue;
+
+   /*  background-color: deepskyblue; */
     border-radius: 20px;
-    padding: 0 5px;
+    padding: 0 5px; 
+    text-align: center;
 }
 
 .current__player{
@@ -60,18 +68,18 @@
   }
 
 .image__player--one, .image__player--two {
-    width: 100px;
+     width: 80px; 
 }
 .container__card {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 487px;
+    /* width: 487px; */
 }
 .card, .card--found {
-    width:105px;
-    height:110px;
-    margin: 8px;
+    width:68px;
+    height:68px;
+    margin: 2px;
     perspective: 1000px;
     -webkit-transition: all 1s ease; /* Safari et Chrome */
     -moz-transition: all 1s ease; /* Firefox */
@@ -129,11 +137,10 @@
 }
 .playerMessage {
     text-align: center;
-    width: 50%;
+    width: 45%;
     position: relative;
-    top: 175px;
-    position: relative;
-    left: 170px;
+    left: 87px;
+    bottom: 55px;
 }
 .refresh__button{
     
@@ -169,8 +176,26 @@
     transform:scale(1.10);
 }
 
-@media only screen and (min-width: 1400px){
+@media only screen and (min-width: 375px){
 
+    .card, .card--found {
+        width:80px;
+        height:72px;
+    }
+    .playerMessage {
 
+        left: 100px;
+    }
+
+    .main__title{
+        
+        left: 115px;
+    }
  }
 
+ @media only screen and (min-width: 425px){
+
+    .card, .card--found {
+        width:90px;
+    }
+ }
