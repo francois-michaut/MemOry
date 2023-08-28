@@ -9,19 +9,19 @@ Min jeux de type memory en Javascript.
 - [Aperçu](#aperçu)
 - [Fonctionnalités](#fonctionnalités)
 - [Installation](#installation)
-- [Utilisation](#utilisation)
+- [Utilisation en vidéo](#utilisation)
 - [Points de terminaison](#points-de-terminaison)
 
 
  ## Aperçu 
  
-
-
-
-
 Découvrez une expérience ludique avec notre jeu de type Memory réalisé en HTML et JavaScript natif. Ce jeu captivant est conçu pour offrir du divertissement aux joueurs de tous âges. L'objectif du jeu est simple : testez votre mémoire en trouvant les paires de cartes correspondantes dans une grille colorée.
 
+Ce projet a été conçu avec une double intention : d'abord, pour enrichir notre expertise en JavaScript, et ensuite, pour affiner notre raisonnement logique, le tout sans recourir à des tutoriels.
+L'intégration et le design n'ont donc pas été une priprité bien que ce projet soit en grande partie responsive.
+
 ## Fonctionnalités 
+
 
 **Mélange des cartes :**
 
@@ -39,7 +39,7 @@ Indicateur visuel pour signaler quel joueur est en train de jouer à tout moment
 
 Nous avons intégré un bouton de "Nouvelle Partie" à la fin de chaque session. 
 
-  ## Installation 
+ ## Installation 
 
 Clonez le Répertoire : Ouvrez un terminal et utilisez la commande suivante pour cloner le répertoire de votre projet depuis GitHub (si c'est là où il est hébergé).
 
@@ -52,5 +52,6 @@ Clonez le Répertoire : Ouvrez un terminal et utilisez la commande suivante pour
 
 https://github.com/francois-michaut/MemOry/assets/94860607/063af692-cfa5-4889-b872-0bea9b829952
 
+ ## Collaboration
 
-
+Ce projet a été réalisé en collaboration par François Michaut et Benoit Gacher en pair-programming tout au long du développement.
