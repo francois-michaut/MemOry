@@ -77,24 +77,10 @@ body{
     /* width: 487px; */
 }
 .card, .card--found {
-    width:68px;
-    height:68px;
+    width: 67px;
+    height: 58px;
     margin: 2px;
-    perspective: 1000px;
-    -webkit-transition: all 1s ease; /* Safari et Chrome */
-    -moz-transition: all 1s ease; /* Firefox */
-    -ms-transition: all 1s ease; /* Internet Explorer 9 */
-    -o-transition: all 1s ease; /* Opera */
-    transition: all 1s ease;
-}
-
-.card:hover {
-    -webkit-transform:scale(1.20); /* Safari et Chrome */
-    -moz-transform:scale(1.20); /* Firefox */
-    -ms-transform:scale(1.20); /* Internet Explorer 9 */
-    -o-transform:scale(1.20); /* Opera */
-    transform:scale(1.20);
-   
+    perspective: 1000px;  
 }
 
 
@@ -179,16 +165,18 @@ body{
 @media only screen and (min-width: 375px){
 
     .card, .card--found {
-        width:80px;
-        height:72px;
+        width: 67px;
+        height: 61px;
     }
+
+
     .playerMessage {
 
         left: 100px;
     }
 
     .main__title{
-        
+        width: 140px;
         left: 115px;
     }
  }
@@ -197,5 +185,103 @@ body{
 
     .card, .card--found {
         width:90px;
+    }
+    .main__title{
+       
+        left: 135px;
+    }
+    .playerMessage {
+
+        width: 50%;
+    }
+ }
+ @media only screen and (min-width: 768px){
+
+    .card, .card--found {
+        width: 98px;
+        height: 88px;
+        margin: 4px;
+    }
+    .main__title{
+       
+        left: 256px;
+        width: 200px;
+        height: 200px;
+        bottom: 50px;
+    }
+    .playerMessage {
+        position: absolute;
+        width: 50%;
+        top: 100px;
+        left: 170px;
+    }
+    .image__player--one, .image__player--two {
+        width: 140px; 
+   }
+ }
+
+ @media only screen and (min-width: 1024px){
+
+    .card, .card--found {
+
+        width:115px;
+        height: 115px;
+
+    }
+    .main__title{
+
+        left: 405px;
+
+    }
+    .playerMessage {
+
+        left: 258px;
+
+    }
+    .image__player--one, .image__player--two {
+
+        width: 140px; 
+   }
+   .container__player--one {
+
+    background-color: darkorange;
+    border-radius: 20px;
+    padding: 0 5px; 
+   
+}
+.container__player--two {
+
+    background-color: deepskyblue; 
+    border-radius: 20px;
+    padding: 0 5px; 
+ }
+
+ @media only screen and (min-width: 1440px){
+
+    .card, .card--found {
+
+        width:110px;
+        height: 150px;
+        margin: 6px;
+    }
+    .main__title{
+
+        left: 600px;
+
+    }
+    .playerMessage {
+
+        left: 360px;
+
+    }
+    .image__player--one, .image__player--two {
+
+        width: 140px; 
+   }
+    .container__players {
+        display: flex;
+        justify-content: space-around;
+    }
+       
     }
  }
