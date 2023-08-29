@@ -25,7 +25,7 @@ L'intégration et le design n'ont donc pas été une priprité bien que ce proje
 
 **Mélange des cartes :**
 
-Nous utilisons l'algorithme de Fisher-Yates, une technique reconnue  pour mélanger les cartes de manière aléatoire avant chaque partie. Grâce à cette méthode à chaque session de jeu la disposition des cartes est imprévisible et garantit des défis uniques à chaque joueur. 
+Nous utilisons l'algorithme de Fisher-Yates, une technique reconnue  pour mélanger les cartes de manière aléatoire avant chaque partie. Grâce à cette méthode, à chaque session de jeu, la disposition des cartes est imprévisible et garantit des défis uniques à chaque joueur. 
 
 **Comptabilisation des points :**
 
